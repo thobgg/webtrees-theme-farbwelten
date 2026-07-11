@@ -49,7 +49,7 @@ Dunkel (dark):
 
 The layout lives in `resources/css/base.css` and only uses CSS custom properties (`--fa-*`). A palette is a single CSS file that sets these variables.
 
-1. Copy `resources/css/palette-hell.css` to `resources/css/palette-<name>.css` and adjust the values. The required variables are documented in [PALETTEN-KONTRAKT.md](PALETTEN-KONTRAKT.md).
+1. Copy `resources/css/palette-hell.css` to `resources/css/palette-<name>.css` and adjust the values. The required variables are documented in [PALETTEN-KONTRAKT.md](PALETTEN-KONTRAKT.md) (in German; the variable names and code samples speak for themselves).
 2. Add the palette to the `palettes()` method in `module.php`.
 
 ## Notes
