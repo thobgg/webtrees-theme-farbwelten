@@ -1,0 +1,463 @@
+/* ═══════════════════════════════════════════════════════════════
+   Familienarchiv-Themes · Struktur-Basis (Stufe 2)
+
+   Wird nach minimal.min.css und vor palette-<name>.css geladen.
+   Enthält KEINE Farbwerte außer var(--fa-*)-Bezügen mit neutralen
+   Fallbacks — alle Farben kommen aus der Palette.
+   Kontrakt: ../../PALETTEN-KONTRAKT.md
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── Bootstrap-Mapping: Paletten-Variablen → Bootstrap 5.3 ── */
+
+:root,
+[data-bs-theme] {
+  --bs-body-bg: var(--fa-bg);
+  --bs-body-color: var(--fa-fg);
+  --bs-secondary-color: var(--fa-muted);
+  --bs-tertiary-bg: var(--fa-table-head-bg);
+  --bs-secondary-bg: var(--fa-border);
+  --bs-border-color: var(--fa-border);
+  --bs-link-color: var(--fa-link);
+  --bs-link-hover-color: var(--fa-link-hover);
+  --bs-link-color-rgb: var(--fa-link-rgb, 46, 117, 182);
+  --bs-link-hover-color-rgb: var(--fa-link-hover-rgb, 30, 58, 95);
+  --bs-emphasis-color: var(--fa-fg);
+  --bs-heading-color: var(--fa-primary);
+}
+
+body.wt-global {
+  background: var(--fa-bg);
+  color: var(--fa-fg);
+  font-family: var(--fa-font-body);
+}
+
+h1, h2, h3, h4, h5,
+.wt-site-title,
+.wt-page-title {
+  font-family: var(--fa-font-heading);
+  color: var(--fa-primary);
+}
+
+.wt-page-title {
+  border-bottom: 2px solid var(--fa-accent);
+  padding-bottom: .35rem;
+  margin-bottom: 1rem;
+}
+
+.text-muted, .form-text {
+  color: var(--fa-muted) !important;
+}
+
+/* ── Header: Primärfläche mit Akzentlinie ── */
+
+[dir] .wt-header-wrapper {
+  background: var(--fa-header-bg);
+  box-shadow: var(--fa-shadow);
+  position: relative;
+}
+
+[dir] .wt-header-wrapper::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--fa-accent), var(--fa-accent-lt), var(--fa-accent));
+}
+
+/* Wortmarke */
+.wt-site-logo {
+  display: flex;
+  flex: 0 0 auto;
+  order: 0;
+  align-items: center;
+  padding: .35rem .5rem .35rem 0;
+}
+
+.wt-site-logo::after {
+  content: var(--fa-logo-url);
+  display: block;
+  width: 242px;
+  height: 50px;
+}
+
+.wt-site-title {
+  color: var(--fa-header-fg);
+  font-size: 1.4rem;
+  align-self: center;
+}
+
+/* Menüs und Suche im Header */
+.wt-header-wrapper .nav-link {
+  color: var(--fa-header-fg-muted);
+}
+
+.wt-header-wrapper .nav-link:hover,
+.wt-header-wrapper .nav-link:focus,
+.wt-header-wrapper .nav-link.active,
+.wt-header-wrapper .dropdown-toggle.show {
+  color: var(--fa-header-fg);
+}
+
+.wt-header-wrapper .wt-user-menu .nav-link,
+.wt-header-wrapper .wt-secondary-navigation .nav-link {
+  color: var(--fa-header-fg-muted);
+}
+
+.wt-genealogy-menu .nav-link.active {
+  border-bottom: 2px solid var(--fa-accent);
+}
+
+.wt-header-search-field {
+  background: var(--fa-input-bg);
+  border-color: var(--fa-input-border);
+  color: var(--fa-fg);
+}
+
+/* ── Links ── */
+
+a {
+  color: var(--fa-link);
+  text-decoration: none;
+}
+
+a:hover, a:focus {
+  color: var(--fa-link-hover);
+}
+
+/* ── Buttons ── */
+
+.btn-primary {
+  --bs-btn-bg: var(--fa-btn-bg);
+  --bs-btn-color: var(--fa-btn-fg);
+  --bs-btn-border-color: var(--fa-btn-bg);
+  --bs-btn-hover-bg: var(--fa-btn-hover-bg);
+  --bs-btn-hover-color: var(--fa-btn-fg);
+  --bs-btn-hover-border-color: var(--fa-btn-hover-bg);
+  --bs-btn-active-bg: var(--fa-btn-hover-bg);
+  --bs-btn-active-color: var(--fa-btn-fg);
+  --bs-btn-active-border-color: var(--fa-btn-hover-bg);
+  --bs-btn-disabled-bg: var(--fa-muted);
+  --bs-btn-disabled-border-color: var(--fa-muted);
+  --bs-btn-disabled-color: var(--fa-card);
+}
+
+.btn-outline-secondary {
+  --bs-btn-color: var(--fa-fg);
+  --bs-btn-border-color: var(--fa-input-border);
+  --bs-btn-hover-bg: var(--fa-table-head-bg);
+  --bs-btn-hover-color: var(--fa-fg);
+  --bs-btn-hover-border-color: var(--fa-input-border);
+}
+
+.btn-link {
+  --bs-btn-color: var(--fa-link);
+  --bs-btn-hover-color: var(--fa-link-hover);
+}
+
+/* ── Formulare ── */
+
+.form-control, .form-select {
+  background-color: var(--fa-input-bg);
+  border-color: var(--fa-input-border);
+  color: var(--fa-fg);
+}
+
+.form-control:focus, .form-select:focus {
+  background-color: var(--fa-input-bg);
+  border-color: var(--fa-link);
+  color: var(--fa-fg);
+  box-shadow: 0 0 0 .25rem var(--fa-focus-ring);
+}
+
+.form-control::placeholder {
+  color: var(--fa-muted);
+}
+
+.form-check-input:checked {
+  background-color: var(--fa-btn-bg);
+  border-color: var(--fa-btn-bg);
+}
+
+.input-group-text {
+  background-color: var(--fa-table-head-bg);
+  border-color: var(--fa-input-border);
+  color: var(--fa-fg);
+}
+
+/* ── Karten, Blöcke (Startseiten-Blöcke, Seitenleisten) ── */
+
+.card {
+  --bs-card-bg: var(--fa-card);
+  --bs-card-border-color: var(--fa-border);
+  --bs-card-cap-bg: var(--fa-table-head-bg);
+}
+
+.card-header {
+  font-family: var(--fa-font-heading);
+  color: var(--fa-primary);
+  border-bottom: 1px solid var(--fa-border);
+}
+
+.wt-block {
+  border-color: var(--fa-border);
+}
+
+.wt-side-blocks .card + .card {
+  margin-top: 1rem;
+}
+
+/* ── Tabellen (Listen, DataTables) ── */
+
+.table {
+  --bs-table-bg: var(--fa-card);
+  --bs-table-color: var(--fa-fg);
+  --bs-table-border-color: var(--fa-border);
+  --bs-table-striped-bg: var(--fa-table-stripe);
+  --bs-table-striped-color: var(--fa-fg);
+  --bs-table-hover-bg: var(--fa-table-hover);
+  --bs-table-hover-color: var(--fa-fg);
+}
+
+.table > thead {
+  background: var(--fa-table-head-bg);
+  font-family: var(--fa-font-heading);
+}
+
+.table > thead th {
+  color: var(--fa-primary);
+  border-bottom: 2px solid var(--fa-accent);
+}
+
+/* DataTables-Bedienelemente erben Bootstrap; Aktiv-Zustände angleichen */
+.page-item.active .page-link {
+  background-color: var(--fa-btn-bg);
+  border-color: var(--fa-btn-bg);
+  color: var(--fa-btn-fg);
+}
+
+.page-link {
+  color: var(--fa-link);
+  background-color: var(--fa-card);
+  border-color: var(--fa-border);
+}
+
+.page-link:hover {
+  color: var(--fa-link-hover);
+  background-color: var(--fa-table-head-bg);
+}
+
+/* ── Fakten-Tabellen (Personen-/Familienseiten) ── */
+
+.wt-facts-table {
+  border-color: var(--fa-border);
+}
+
+.wt-facts-table th {
+  background: var(--fa-table-head-bg);
+  color: var(--fa-primary);
+  font-family: var(--fa-font-heading);
+  font-weight: normal;
+  border-color: var(--fa-border);
+}
+
+.wt-facts-table td {
+  background: var(--fa-card);
+  border-color: var(--fa-border);
+}
+
+/* Seitenoptionen (Listen-Filterleisten) */
+.wt-page-options-label {
+  background: var(--fa-table-head-bg);
+  color: var(--fa-primary);
+  border-color: var(--fa-border);
+}
+
+.wt-page-options-value {
+  background: var(--fa-card);
+  border-color: var(--fa-border);
+}
+
+/* ── Tabs (Personenseite) ── */
+
+.nav-tabs {
+  --bs-nav-tabs-border-color: var(--fa-border);
+  --bs-nav-tabs-link-active-bg: var(--fa-card);
+  --bs-nav-tabs-link-active-color: var(--fa-primary);
+  --bs-nav-tabs-link-active-border-color: var(--fa-border) var(--fa-border) var(--fa-card);
+  --bs-nav-tabs-link-hover-border-color: var(--fa-border) var(--fa-border) var(--fa-border);
+}
+
+.nav-tabs .nav-link {
+  color: var(--fa-link);
+}
+
+.nav-tabs .nav-link.active {
+  border-top: 2px solid var(--fa-accent);
+}
+
+/* ── Dropdowns & Modale ── */
+
+.dropdown-menu {
+  --bs-dropdown-bg: var(--fa-card);
+  --bs-dropdown-color: var(--fa-fg);
+  --bs-dropdown-link-color: var(--fa-fg);
+  --bs-dropdown-link-hover-bg: var(--fa-table-head-bg);
+  --bs-dropdown-link-hover-color: var(--fa-fg);
+  --bs-dropdown-link-active-bg: var(--fa-btn-bg);
+  --bs-dropdown-link-active-color: var(--fa-btn-fg);
+  --bs-dropdown-border-color: var(--fa-border);
+}
+
+.modal-content {
+  background-color: var(--fa-card);
+  color: var(--fa-fg);
+  border-color: var(--fa-border);
+}
+
+.modal-header {
+  border-bottom-color: var(--fa-border);
+}
+
+.modal-footer {
+  border-top-color: var(--fa-border);
+}
+
+/* ── Diagramme: Boxen & Verbindungslinien ── */
+
+.wt-chart-box {
+  background: var(--fa-chart-box-bg);
+  border: 1px solid var(--fa-border);
+  color: var(--fa-fg);
+}
+
+.wt-chart-box-m {
+  background: var(--fa-sex-m-bg);
+  border-color: var(--fa-sex-m);
+}
+
+.wt-chart-box-f {
+  background: var(--fa-sex-f-bg);
+  border-color: var(--fa-sex-f);
+}
+
+.wt-chart-box-u {
+  background: var(--fa-sex-u-bg);
+  border-color: var(--fa-sex-u);
+}
+
+.wt-chart-box-x {
+  background: var(--fa-sex-x-bg);
+  border-color: var(--fa-sex-x);
+}
+
+.wt-chart-box-name {
+  color: var(--fa-primary);
+  font-family: var(--fa-font-heading);
+}
+
+.wt-icon-sex-m { color: var(--fa-sex-m); }
+.wt-icon-sex-f { color: var(--fa-sex-f); }
+.wt-icon-sex-u { color: var(--fa-sex-u); }
+.wt-icon-sex-x { color: var(--fa-sex-x); }
+
+.wt-chart-horizontal-line,
+.wt-chart-vertical-line,
+.wt-chart-vertical-child-line,
+.wt-chart-vertical-last-child-line,
+.wt-pedigree-lines {
+  border-color: var(--fa-chart-line);
+}
+
+/* ── Badges, Hervorhebungen ── */
+
+.badge.bg-secondary {
+  background-color: var(--fa-muted) !important;
+}
+
+.wt-new {
+  outline-color: var(--fa-accent);
+}
+
+.wt-old {
+  outline-color: var(--fa-muted);
+}
+
+/* ── Footer ── */
+
+.wt-footers {
+  color: var(--fa-muted);
+  border-top: 1px solid var(--fa-border);
+  padding-top: .75rem;
+  margin-top: 1.5rem;
+}
+
+.wt-footers a {
+  color: var(--fa-muted);
+  text-decoration: underline;
+}
+
+/* ── Fokus-Sichtbarkeit (Tastatur) ── */
+
+a:focus-visible,
+button:focus-visible,
+.nav-link:focus-visible {
+  outline: 2px solid var(--fa-accent);
+  outline-offset: 2px;
+}
+
+/* ── Mobil (WebView der Android-App!) ── */
+
+@media (max-width: 576px) {
+  .wt-site-logo::after {
+    width: 170px;
+    height: 35px;
+    content: var(--fa-logo-url);
+    transform: scale(.72);
+    transform-origin: left center;
+  }
+
+  .wt-page-title {
+    font-size: 1.35rem;
+  }
+
+  .wt-facts-table th {
+    width: 35%;
+  }
+}
+
+/* ── Hauptmenü-Icons: Linien-Stil, per Maske gefärbt (--fa-header-accent).
+   Überschreibt auch die von Sammlungen/Ortsregister injizierten Bild-Icons
+   (deren content:url(...) kommt per Inline-<style>; !important gewinnt). ── */
+
+.wt-genealogy-menu .menu-tree > .nav-link::before,
+.wt-genealogy-menu .menu-chart > .nav-link::before,
+.wt-genealogy-menu .menu-list > .nav-link::before,
+.wt-genealogy-menu .menu-calendar > .nav-link::before,
+.wt-genealogy-menu .menu-report > .nav-link::before,
+.wt-genealogy-menu .menu-search > .nav-link::before,
+.wt-genealogy-menu .menu-clippings > .nav-link::before,
+.wt-genealogy-menu .menu-sammlungen > .nav-link::before,
+.wt-genealogy-menu .menu-ortsregister > .nav-link::before {
+  content: "" !important;
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 20px;
+  height: 20px;
+  margin-right: .4rem;
+  vertical-align: -.3em;
+  background-color: var(--fa-header-accent);
+  -webkit-mask: var(--fa-menu-icon) center / contain no-repeat;
+  mask: var(--fa-menu-icon) center / contain no-repeat;
+}
+
+.wt-genealogy-menu .menu-tree > .nav-link { --fa-menu-icon: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20stroke%3D%22%23000%22%20stroke-width%3D%221.7%22%3E%3Cpath%20d%3D%22M12%2020v-6%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M12%2014c0-3-5-1.5-5-4.5%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M12%2014c0-3%205-1.5%205-4.5%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22%2F%3E%3Ccircle%20cx%3D%227%22%20cy%3D%228%22%20r%3D%221.9%22%20stroke%3D%22none%22%20fill%3D%22%23000%22%2F%3E%3Ccircle%20cx%3D%2217%22%20cy%3D%228%22%20r%3D%221.9%22%20stroke%3D%22none%22%20fill%3D%22%23000%22%2F%3E%3Ccircle%20cx%3D%2212%22%20cy%3D%225%22%20r%3D%221.9%22%20stroke%3D%22none%22%20fill%3D%22%23000%22%2F%3E%3Ccircle%20cx%3D%2212%22%20cy%3D%2221%22%20r%3D%221.6%22%20stroke%3D%22none%22%20fill%3D%22%23000%22%2F%3E%3C%2Fsvg%3E"); }
+.wt-genealogy-menu .menu-chart > .nav-link { --fa-menu-icon: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20stroke%3D%22%23000%22%20stroke-width%3D%221.7%22%3E%3Crect%20x%3D%222%22%20y%3D%229%22%20width%3D%227%22%20height%3D%226%22%20rx%3D%221%22%20fill%3D%22none%22%2F%3E%3Crect%20x%3D%2215%22%20y%3D%222.5%22%20width%3D%227%22%20height%3D%226%22%20rx%3D%221%22%20fill%3D%22none%22%2F%3E%3Crect%20x%3D%2215%22%20y%3D%2215.5%22%20width%3D%227%22%20height%3D%226%22%20rx%3D%221%22%20fill%3D%22none%22%2F%3E%3Cpath%20d%3D%22M9%2012h3M12%2012V5.5h3M12%2012v6.5h3%22%20fill%3D%22none%22%2F%3E%3C%2Fsvg%3E"); }
+.wt-genealogy-menu .menu-list > .nav-link { --fa-menu-icon: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20stroke%3D%22%23000%22%20stroke-width%3D%221.7%22%3E%3Ccircle%20cx%3D%224.5%22%20cy%3D%226%22%20r%3D%221.5%22%20stroke%3D%22none%22%20fill%3D%22%23000%22%2F%3E%3Ccircle%20cx%3D%224.5%22%20cy%3D%2212%22%20r%3D%221.5%22%20stroke%3D%22none%22%20fill%3D%22%23000%22%2F%3E%3Ccircle%20cx%3D%224.5%22%20cy%3D%2218%22%20r%3D%221.5%22%20stroke%3D%22none%22%20fill%3D%22%23000%22%2F%3E%3Cpath%20d%3D%22M9%206h11M9%2012h11M9%2018h11%22%20stroke-linecap%3D%22round%22%2F%3E%3C%2Fsvg%3E"); }
+.wt-genealogy-menu .menu-calendar > .nav-link { --fa-menu-icon: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20stroke%3D%22%23000%22%20stroke-width%3D%221.7%22%3E%3Crect%20x%3D%223%22%20y%3D%225%22%20width%3D%2218%22%20height%3D%2216%22%20rx%3D%222%22%20fill%3D%22none%22%2F%3E%3Cpath%20d%3D%22M3%2010h18M8%202.5V7M16%202.5V7%22%20stroke-linecap%3D%22round%22%2F%3E%3C%2Fsvg%3E"); }
+.wt-genealogy-menu .menu-report > .nav-link { --fa-menu-icon: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20stroke%3D%22%23000%22%20stroke-width%3D%221.7%22%3E%3Cpath%20d%3D%22M6%202.5h8.5L19%207v14.5H6z%22%20fill%3D%22none%22%20stroke-linejoin%3D%22round%22%2F%3E%3Cpath%20d%3D%22M14.5%202.5V7H19%22%20fill%3D%22none%22%20stroke-linejoin%3D%22round%22%2F%3E%3Cpath%20d%3D%22M9%2012h6.5M9%2016h6.5%22%20stroke-linecap%3D%22round%22%2F%3E%3C%2Fsvg%3E"); }
+.wt-genealogy-menu .menu-search > .nav-link { --fa-menu-icon: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20stroke%3D%22%23000%22%20stroke-width%3D%221.7%22%3E%3Ccircle%20cx%3D%2210.5%22%20cy%3D%2210.5%22%20r%3D%226.2%22%20fill%3D%22none%22%2F%3E%3Cpath%20d%3D%22M15.2%2015.2%2021%2021%22%20stroke-linecap%3D%22round%22%2F%3E%3C%2Fsvg%3E"); }
+.wt-genealogy-menu .menu-clippings > .nav-link { --fa-menu-icon: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20stroke%3D%22%23000%22%20stroke-width%3D%221.7%22%3E%3Cpath%20d%3D%22M5%208.5h14l-1.4%2012a1.5%201.5%200%200%201-1.5%201.3H7.9a1.5%201.5%200%200%201-1.5-1.3z%22%20fill%3D%22none%22%20stroke-linejoin%3D%22round%22%2F%3E%3Cpath%20d%3D%22M9%208.5V6a3%203%200%200%201%206%200v2.5%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22%2F%3E%3C%2Fsvg%3E"); }
+.wt-genealogy-menu .menu-sammlungen > .nav-link { --fa-menu-icon: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20stroke%3D%22%23000%22%20stroke-width%3D%221.7%22%3E%3Crect%20x%3D%223%22%20y%3D%224%22%20width%3D%2218%22%20height%3D%225%22%20rx%3D%221%22%20fill%3D%22none%22%2F%3E%3Cpath%20d%3D%22M5%209v10.5a1.5%201.5%200%200%200%201.5%201.5h11a1.5%201.5%200%200%200%201.5-1.5V9%22%20fill%3D%22none%22%2F%3E%3Cpath%20d%3D%22M10%2013.5h4%22%20stroke-linecap%3D%22round%22%2F%3E%3C%2Fsvg%3E"); }
+.wt-genealogy-menu .menu-ortsregister > .nav-link { --fa-menu-icon: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20stroke%3D%22%23000%22%20stroke-width%3D%221.7%22%3E%3Cpath%20d%3D%22M12%2021.5S5%2015.2%205%2010a7%207%200%200%201%2014%200c0%205.2-7%2011.5-7%2011.5z%22%20fill%3D%22none%22%20stroke-linejoin%3D%22round%22%2F%3E%3Ccircle%20cx%3D%2212%22%20cy%3D%2210%22%20r%3D%222.6%22%20fill%3D%22none%22%2F%3E%3C%2Fsvg%3E"); }

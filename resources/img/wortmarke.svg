@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="242" height="50" viewBox="0 0 242 50" role="img" aria-label="webtrees">
+  <!-- Bildmarke: Ahnentafel als Baum im Siegelring -->
+  <g>
+    <circle cx="25" cy="25" r="22.5" fill="none" stroke="#c8922a" stroke-width="1.6"/>
+    <circle cx="25" cy="25" r="19.5" fill="none" stroke="#c8922a" stroke-width="0.6" opacity="0.6"/>
+    <!-- Äste: Proband unten, Eltern, Großeltern -->
+    <g stroke="#1e3a5f" stroke-width="1.6" stroke-linecap="round" fill="none">
+      <path d="M25 35.5 C25 32 18.5 33.5 18.5 31"/>
+      <path d="M25 35.5 C25 32 31.5 33.5 31.5 31"/>
+      <path d="M18.5 26.5 C18.5 23.5 12.5 25 12.5 22"/>
+      <path d="M18.5 26.5 C18.5 23.5 22.5 25 22.5 22"/>
+      <path d="M31.5 26.5 C31.5 23.5 27.5 25 27.5 22"/>
+      <path d="M31.5 26.5 C31.5 23.5 37.5 25 37.5 22"/>
+    </g>
+    <!-- Personen-Knoten: Proband gold, Vorfahren navy -->
+    <circle cx="25" cy="38" r="3" fill="#c8922a"/>
+    <circle cx="18.5" cy="28.5" r="2.5" fill="#1e3a5f"/>
+    <circle cx="31.5" cy="28.5" r="2.5" fill="#1e3a5f"/>
+    <circle cx="12.5" cy="19.8" r="2.1" fill="#1e3a5f"/>
+    <circle cx="22.5" cy="19.8" r="2.1" fill="#1e3a5f"/>
+    <circle cx="27.5" cy="19.8" r="2.1" fill="#1e3a5f"/>
+    <circle cx="37.5" cy="19.8" r="2.1" fill="#1e3a5f"/>
+  </g>
+  <!-- Wortmarke -->
+  <text x="58" y="32" font-family="Georgia, 'Times New Roman', serif" font-size="27" letter-spacing="0.5" fill="#1e3a5f">web<tspan fill="#c8922a">trees</tspan></text>
+  <!-- Goldene Zierlinie, Echo der Header-Linie -->
+  <rect x="59" y="39" width="158" height="1.1" fill="#c8922a" opacity="0.8"/>
+</svg>

@@ -1,0 +1,77 @@
+/* ═══════════════════════════════════════════
+   Familienarchiv-Theme · Palette „Bordeaux"
+   Schwester von „Hell": tiefes Weinrot statt Navy,
+   dieselben Gold-Akzente, warmer Creme-Grund.
+   Bordeaux #5e1f2e · Wein #8a2f42 · Gold #c8922a / #e0a83a
+   Creme #f7ede8 · Karten #fffaf7
+   Wird nach base.css geladen; definiert ausschließlich
+   die Pflicht-Variablen aus PALETTEN-KONTRAKT.md.
+   ═══════════════════════════════════════════ */
+
+:root {
+  /* Typografie */
+  --fa-font-heading: Georgia, "Times New Roman", serif;    /* Überschriften, Seitentitel */
+  --fa-font-body:    system-ui, -apple-system, sans-serif; /* Fließtext */
+
+  /* Grundflächen */
+  --fa-bg:      #f7ede8;   /* Seitenhintergrund (warmes Creme) */
+  --fa-fg:      #2a2124;   /* Fließtext, warmes Fast-Schwarz (≥12:1) */
+  --fa-muted:   #75625c;   /* Sekundärtext (≥4.5:1 auf Creme) */
+  --fa-card:    #fffaf7;   /* Karten, Tabellen, Formulare */
+  --fa-border:  #e8d8d0;   /* Rahmen, Trennlinien */
+
+  /* Markenfarben */
+  --fa-primary:   #5e1f2e; /* Bordeaux: Überschriften, Primärflächen */
+  --fa-accent:    #c8922a; /* Gold: Akzente (Familien-Konstante) */
+  --fa-accent-lt: #e0a83a; /* helles Gold: Verläufe, Hover */
+
+  /* Links (Weinrot, ~7:1 auf Creme) */
+  --fa-link:       #8a2f42;
+  --fa-link-hover: #5e1f2e;
+  --fa-link-rgb: 138, 47, 66;
+  --fa-link-hover-rgb: 94, 31, 46;
+
+  /* Header (dunkles Bordeaux mit Goldlinie, helle Wortmarke) */
+  --fa-header-bg:       #4a1824;
+  --fa-header-fg:       rgba(247, 242, 234, .92);
+  --fa-header-fg-muted: rgba(247, 242, 234, .72);
+  --fa-header-accent:   #c8922a;
+  /* Wortmarke wie „Hell": Gold-Ringe + Creme-Schrift — funktioniert
+     auf dem Bordeaux-Header genauso wie auf Navy. */
+  --fa-logo-url: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22242%22 height=%2250%22 viewBox=%220 0 242 50%22 role=%22img%22 aria-label=%22webtrees%22%3E%0A  %3C%21-- Helle Variante fuer den Navy-Header --%3E%0A  %3Cg%3E%0A    %3Ccircle cx=%2225%22 cy=%2225%22 r=%2222.5%22 fill=%22none%22 stroke=%22%23c8922a%22 stroke-width=%221.6%22/%3E%0A    %3Ccircle cx=%2225%22 cy=%2225%22 r=%2219.5%22 fill=%22none%22 stroke=%22%23c8922a%22 stroke-width=%220.6%22 opacity=%220.6%22/%3E%0A    %3Cg stroke=%22%23f5f3ef%22 stroke-width=%221.6%22 stroke-linecap=%22round%22 fill=%22none%22%3E%0A      %3Cpath d=%22M25 35.5 C25 32 18.5 33.5 18.5 31%22/%3E%0A      %3Cpath d=%22M25 35.5 C25 32 31.5 33.5 31.5 31%22/%3E%0A      %3Cpath d=%22M18.5 26.5 C18.5 23.5 12.5 25 12.5 22%22/%3E%0A      %3Cpath d=%22M18.5 26.5 C18.5 23.5 22.5 25 22.5 22%22/%3E%0A      %3Cpath d=%22M31.5 26.5 C31.5 23.5 27.5 25 27.5 22%22/%3E%0A      %3Cpath d=%22M31.5 26.5 C31.5 23.5 37.5 25 37.5 22%22/%3E%0A    %3C/g%3E%0A    %3Ccircle cx=%2225%22 cy=%2238%22 r=%223%22 fill=%22%23e0a83a%22/%3E%0A    %3Ccircle cx=%2218.5%22 cy=%2228.5%22 r=%222.5%22 fill=%22%23f5f3ef%22/%3E%0A    %3Ccircle cx=%2231.5%22 cy=%2228.5%22 r=%222.5%22 fill=%22%23f5f3ef%22/%3E%0A    %3Ccircle cx=%2212.5%22 cy=%2219.8%22 r=%222.1%22 fill=%22%23f5f3ef%22/%3E%0A    %3Ccircle cx=%2222.5%22 cy=%2219.8%22 r=%222.1%22 fill=%22%23f5f3ef%22/%3E%0A    %3Ccircle cx=%2227.5%22 cy=%2219.8%22 r=%222.1%22 fill=%22%23f5f3ef%22/%3E%0A    %3Ccircle cx=%2237.5%22 cy=%2219.8%22 r=%222.1%22 fill=%22%23f5f3ef%22/%3E%0A  %3C/g%3E%0A  %3Ctext x=%2258%22 y=%2232%22 font-family=%22Georgia, 'Times New Roman', serif%22 font-size=%2227%22 letter-spacing=%220.5%22 fill=%22%23f5f3ef%22%3Eweb%3Ctspan fill=%22%23e0a83a%22%3Etrees%3C/tspan%3E%3C/text%3E%0A  %3Crect x=%2259%22 y=%2239%22 width=%22158%22 height=%221.1%22 fill=%22%23e0a83a%22 opacity=%220.8%22/%3E%0A%3C/svg%3E%0A");
+
+  /* Tabellen */
+  --fa-table-head-bg: #f0e0d8;
+  --fa-table-stripe:  rgba(94, 31, 46, .035);
+  --fa-table-hover:   rgba(200, 146, 42, .10);
+
+  /* Formulare */
+  --fa-input-bg:     #fffaf7;
+  --fa-input-border: #d8c2ba;
+  --fa-focus-ring:   rgba(138, 47, 66, .30);
+
+  /* Primär-Buttons */
+  --fa-btn-bg:       #5e1f2e;
+  --fa-btn-fg:       #f7ede8;
+  --fa-btn-hover-bg: #8a2f42;
+
+  /* Geschlechts-Tints — wie „Hell", leicht warm abgestimmt */
+  --fa-sex-m: #84beff;
+  --fa-sex-f: #ff88aa;
+  --fa-sex-u: #88cc88;
+  --fa-sex-x: #ccaa88;
+  --fa-sex-m-bg: rgba(132, 190, 255, .16);
+  --fa-sex-f-bg: rgba(255, 136, 170, .16);
+  --fa-sex-u-bg: rgba(136, 204, 136, .14);
+  --fa-sex-x-bg: rgba(204, 170, 136, .14);
+
+  /* Diagramme */
+  --fa-chart-line:   #a1938b;  /* Verbindungslinien Pedigree/Descendants */
+  --fa-chart-box-bg: #fffaf7;  /* Grundfläche wt-chart-box */
+
+  /* Sonstiges */
+  --fa-shadow: 0 2px 10px rgba(74, 24, 36, .28); /* Header-/Karten-Schatten */
+}
+
+/* Keine palettenspezifischen Extras:
+   „Bordeaux" ist ein direktes Geschwister von „Hell". */

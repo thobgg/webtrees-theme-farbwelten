@@ -1,0 +1,135 @@
+/* ═══════════════════════════════════════════════════════════
+   Familienarchiv-Theme · Palette „Dunkel"
+   Dark Mode in Navy/Amber — Geschwister der hellen CI-Palette
+   (Navy #1e3a5f · Gold #c8922a), aber auf sehr dunklem, leicht
+   blaustichigem Grund. Amber #e0a83a ersetzt Gold als Haupt-
+   akzent, da #c8922a auf Dunkel zu matt wirkt.
+
+   Kontrast (WCAG AA, rechnerisch geprüft):
+     Fließtext #e8e4dc auf #14181f ... 14.0:1
+     Fließtext auf Karte #1d232c .... 12.5:1
+     Sekundärtext #a8a094 auf Grund .. 6.9:1
+     Links #7ab3e0 auf Grund ......... 7.9:1 / auf Karte 7.0:1
+     Amber #e0a83a auf Grund ......... 8.3:1
+     Button-Text #14181f auf Amber ... 8.3:1
+
+   Lädt nach minimal.min.css und base.css; definiert nur die
+   Kontrakt-Variablen plus die Dark-Sonderfälle nach Regel 4.
+   ═══════════════════════════════════════════════════════════ */
+
+:root {
+  /* Native Scrollbars, Checkboxen, Date-Picker etc. dunkel rendern */
+  color-scheme: dark;
+
+  /* Typografie */
+  --fa-font-heading: Georgia, "Times New Roman", serif;
+  --fa-font-body:    system-ui, -apple-system, sans-serif;
+
+  /* Grundflächen */
+  --fa-bg:      #14181f;   /* Seitenhintergrund, leicht blaustichig */
+  --fa-fg:      #e8e4dc;   /* warmes Hell für Fließtext */
+  --fa-muted:   #a8a094;   /* Sekundärtext */
+  --fa-card:    #1d232c;   /* Karten, Tabellen, Formulare */
+  --fa-border:  #323b48;   /* Rahmen, Trennlinien */
+
+  /* Markenfarben */
+  --fa-primary:   #7ab3e0; /* Überschriften: helles Navy-Blau statt dunklem Navy */
+  --fa-accent:    #e0a83a; /* Amber als Hauptakzent */
+  --fa-accent-lt: #edbe66; /* helle Amber-Variante (Verläufe, Hover) */
+
+  /* Links */
+  --fa-link:       #7ab3e0;
+  --fa-link-hover: #a3ccec;
+  --fa-link-rgb: 122, 179, 224;
+  --fa-link-hover-rgb: 163, 204, 236;
+
+  /* Header: noch dunkler als der Seitengrund, mit Amber-Linie */
+  --fa-header-bg:       #0f1622;
+  --fa-header-fg:       rgba(232, 228, 220, .9);
+  --fa-header-fg-muted: rgba(232, 228, 220, .65);
+  --fa-header-accent:   #e0a83a;
+  --fa-logo-url: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22242%22 height=%2250%22 viewBox=%220 0 242 50%22 role=%22img%22 aria-label=%22webtrees%22%3E%3Cg%3E%3Ccircle cx=%2225%22 cy=%2225%22 r=%2222.5%22 fill=%22none%22 stroke=%22%23e0a83a%22 stroke-width=%221.6%22/%3E%3Ccircle cx=%2225%22 cy=%2225%22 r=%2219.5%22 fill=%22none%22 stroke=%22%23e0a83a%22 stroke-width=%220.6%22 opacity=%220.6%22/%3E%3Cg stroke=%22%23e8e4dc%22 stroke-width=%221.6%22 stroke-linecap=%22round%22 fill=%22none%22%3E%3Cpath d=%22M25 35.5 C25 32 18.5 33.5 18.5 31%22/%3E%3Cpath d=%22M25 35.5 C25 32 31.5 33.5 31.5 31%22/%3E%3Cpath d=%22M18.5 26.5 C18.5 23.5 12.5 25 12.5 22%22/%3E%3Cpath d=%22M18.5 26.5 C18.5 23.5 22.5 25 22.5 22%22/%3E%3Cpath d=%22M31.5 26.5 C31.5 23.5 27.5 25 27.5 22%22/%3E%3Cpath d=%22M31.5 26.5 C31.5 23.5 37.5 25 37.5 22%22/%3E%3C/g%3E%3Ccircle cx=%2225%22 cy=%2238%22 r=%223%22 fill=%22%23e0a83a%22/%3E%3Ccircle cx=%2218.5%22 cy=%2228.5%22 r=%222.5%22 fill=%22%23e8e4dc%22/%3E%3Ccircle cx=%2231.5%22 cy=%2228.5%22 r=%222.5%22 fill=%22%23e8e4dc%22/%3E%3Ccircle cx=%2212.5%22 cy=%2219.8%22 r=%222.1%22 fill=%22%23e8e4dc%22/%3E%3Ccircle cx=%2222.5%22 cy=%2219.8%22 r=%222.1%22 fill=%22%23e8e4dc%22/%3E%3Ccircle cx=%2227.5%22 cy=%2219.8%22 r=%222.1%22 fill=%22%23e8e4dc%22/%3E%3Ccircle cx=%2237.5%22 cy=%2219.8%22 r=%222.1%22 fill=%22%23e8e4dc%22/%3E%3C/g%3E%3Ctext x=%2258%22 y=%2232%22 font-family=%22Georgia, 'Times New Roman', serif%22 font-size=%2227%22 letter-spacing=%220.5%22 fill=%22%23e8e4dc%22%3Eweb%3Ctspan fill=%22%23e0a83a%22%3Etrees%3C/tspan%3E%3C/text%3E%3Crect x=%2259%22 y=%2239%22 width=%22158%22 height=%221.1%22 fill=%22%23e0a83a%22 opacity=%220.8%22/%3E%3C/svg%3E");
+
+  /* Tabellen */
+  --fa-table-head-bg: #232b36;
+  --fa-table-stripe:  rgba(232, 228, 220, .03);
+  --fa-table-hover:   rgba(224, 168, 58, .12);
+
+  /* Formulare */
+  --fa-input-bg:     #171c24;
+  --fa-input-border: #3a4351;
+  --fa-focus-ring:   rgba(122, 179, 224, .4);
+
+  /* Primär-Buttons: Amber mit dunkler Schrift */
+  --fa-btn-bg:       #e0a83a;
+  --fa-btn-fg:       #14181f;
+  --fa-btn-hover-bg: #eab654;
+
+  /* Geschlechts-Tints: gedämpft/transparent, damit sie nicht leuchten */
+  --fa-sex-m: #7396bd;
+  --fa-sex-f: #bd7f96;
+  --fa-sex-u: #7ba87b;
+  --fa-sex-x: #ab9070;
+  --fa-sex-m-bg: rgba(115, 150, 189, .14);
+  --fa-sex-f-bg: rgba(189, 127, 150, .14);
+  --fa-sex-u-bg: rgba(123, 168, 123, .12);
+  --fa-sex-x-bg: rgba(171, 144, 112, .12);
+
+  /* Diagramme */
+  --fa-chart-line:   #5a626e;
+  --fa-chart-box-bg: #1d232c;
+
+  /* Sonstiges: Schatten auf Dunkel kräftiger */
+  --fa-shadow: 0 2px 14px rgba(0, 0, 0, .55);
+}
+
+/* ── Dark-Sonderfälle (Kontrakt-Regel 4) ─────────────────────
+   Bootstrap-Defaults, die base.css nicht aus Variablen ableitet. */
+
+.form-control,
+.form-select {
+  background-color: var(--fa-input-bg);
+  color: var(--fa-fg);
+  border-color: var(--fa-input-border);
+}
+
+.form-control:focus,
+.form-select:focus {
+  background-color: var(--fa-input-bg);
+  color: var(--fa-fg);
+}
+
+.form-control::placeholder {
+  color: #8d8578; /* 4.7:1 auf --fa-input-bg */
+}
+
+/* Bootstrap-Pfeil des Selects ist dunkel eingebettet — helle Variante */
+.form-select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23a8a094' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3E%3C/svg%3E");
+}
+
+.modal-content {
+  background-color: var(--fa-card);
+  color: var(--fa-fg);
+  border-color: var(--fa-border);
+}
+
+.dropdown-menu {
+  background-color: var(--fa-card);
+  color: var(--fa-fg);
+  border-color: var(--fa-border);
+}
+
+.dropdown-menu .dropdown-item {
+  color: var(--fa-fg);
+}
+
+.dropdown-menu .dropdown-item:hover,
+.dropdown-menu .dropdown-item:focus {
+  background-color: var(--fa-table-hover);
+  color: var(--fa-fg);
+}
+
+.table {
+  color: var(--fa-fg);
+}

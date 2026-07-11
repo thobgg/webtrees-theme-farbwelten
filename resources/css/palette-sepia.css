@@ -1,0 +1,105 @@
+/* ═══════════════════════════════════════════════════════════════
+   Familienarchiv-Palette „Sepia" · Ortsfamilienbuch-Druckoptik
+   ─────────────────────────────────────────────────────────────────
+   Warme, gedeckte Buchdruck-Anmutung: Papier statt Bildschirmweiß,
+   dunkles Sepia-Braun statt Navy, Kupfer/Bronze statt Gold.
+   Der Header ist bewusst HELL gehalten (Pergament mit schmaler
+   Bronze-Linie) — wie das Titelband eines Buchdeckels, nicht wie
+   eine dunkle App-Leiste. Durchgängig Serifen (Georgia), auch im
+   Fließtext: Dieses Theme ist die Druckvorstufe fürs OFB.
+   Lädt nach: minimal.min.css → base.css → palette-sepia.css
+   Kontrakt: PALETTEN-KONTRAKT.md (nur Variablen + Print-Block)
+   ═══════════════════════════════════════════════════════════════ */
+
+:root {
+  /* Typografie — Serif auch im Fließtext (Druckoptik) */
+  --fa-font-heading: Georgia, "Times New Roman", serif;
+  --fa-font-body:    Georgia, "Times New Roman", serif;
+
+  /* Grundflächen — Papier und Karton */
+  --fa-bg:      #eee1c2;   /* Seitenhintergrund: gealtertes Papier */
+  --fa-fg:      #3a2f24;   /* Fließtext: dunkles Braun (Druckerschwärze auf Papier) */
+  --fa-muted:   #6e5c46;   /* Sekundärtext: verblasste Tinte (≥ 4.5:1 auf --fa-bg) */
+  --fa-card:    #f8f0d9;   /* Karten/Tabellen: hellerer Karton */
+  --fa-border:  #d6c69f;   /* Rahmen: vergilbte Trennlinien */
+
+  /* Markenfarben — Sepia statt Navy, Bronze statt Gold */
+  --fa-primary:   #5b4632; /* dunkles Sepia-Braun */
+  --fa-accent:    #8b5e34; /* gedecktes Kupfer/Bronze */
+  --fa-accent-lt: #a97b4c; /* helle Bronzevariante (Verläufe, Hover) */
+
+  /* Links — dunkles Rostbraun, AA-Kontrast auf Papier und Karton */
+  --fa-link:       #8a4a1f;
+  --fa-link-hover: #5b4632;
+  --fa-link-rgb: 138, 74, 31;
+  --fa-link-hover-rgb: 91, 70, 50;
+
+  /* Header — helles Pergament-Titelband, KEINE dunkle Fläche */
+  --fa-header-bg:       #ece1cc;
+  --fa-header-fg:       #3a2f24;
+  --fa-header-fg-muted: rgba(58, 47, 36, .65);
+  --fa-header-accent:   #8b5e34;  /* schmale Bronze-Linie unterm Titelband */
+  --fa-logo-url:        url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22242%22 height=%2250%22 viewBox=%220 0 242 50%22 role=%22img%22 aria-label=%22webtrees%22%3E%3Cg%3E%3Ccircle cx=%2225%22 cy=%2225%22 r=%2222.5%22 fill=%22none%22 stroke=%22%238b5e34%22 stroke-width=%221.6%22/%3E%3Ccircle cx=%2225%22 cy=%2225%22 r=%2219.5%22 fill=%22none%22 stroke=%22%238b5e34%22 stroke-width=%220.6%22 opacity=%220.6%22/%3E%3Cg stroke=%22%233a2f24%22 stroke-width=%221.6%22 stroke-linecap=%22round%22 fill=%22none%22%3E%3Cpath d=%22M25 35.5 C25 32 18.5 33.5 18.5 31%22/%3E%3Cpath d=%22M25 35.5 C25 32 31.5 33.5 31.5 31%22/%3E%3Cpath d=%22M18.5 26.5 C18.5 23.5 12.5 25 12.5 22%22/%3E%3Cpath d=%22M18.5 26.5 C18.5 23.5 22.5 25 22.5 22%22/%3E%3Cpath d=%22M31.5 26.5 C31.5 23.5 27.5 25 27.5 22%22/%3E%3Cpath d=%22M31.5 26.5 C31.5 23.5 37.5 25 37.5 22%22/%3E%3C/g%3E%3Ccircle cx=%2225%22 cy=%2238%22 r=%223%22 fill=%22%238b5e34%22/%3E%3Ccircle cx=%2218.5%22 cy=%2228.5%22 r=%222.5%22 fill=%22%233a2f24%22/%3E%3Ccircle cx=%2231.5%22 cy=%2228.5%22 r=%222.5%22 fill=%22%233a2f24%22/%3E%3Ccircle cx=%2212.5%22 cy=%2219.8%22 r=%222.1%22 fill=%22%233a2f24%22/%3E%3Ccircle cx=%2222.5%22 cy=%2219.8%22 r=%222.1%22 fill=%22%233a2f24%22/%3E%3Ccircle cx=%2227.5%22 cy=%2219.8%22 r=%222.1%22 fill=%22%233a2f24%22/%3E%3Ccircle cx=%2237.5%22 cy=%2219.8%22 r=%222.1%22 fill=%22%233a2f24%22/%3E%3C/g%3E%3Ctext x=%2258%22 y=%2232%22 font-family=%22Georgia, 'Times New Roman', serif%22 font-size=%2227%22 letter-spacing=%220.5%22 fill=%22%233a2f24%22%3Eweb%3Ctspan fill=%22%238b5e34%22%3Etrees%3C/tspan%3E%3C/text%3E%3Crect x=%2259%22 y=%2239%22 width=%22158%22 height=%221.1%22 fill=%22%238b5e34%22 opacity=%220.8%22/%3E%3C/svg%3E");
+
+  /* Tabellen — wie Registerseiten im OFB */
+  --fa-table-head-bg: #e3d2ac;
+  --fa-table-stripe:  rgba(91, 70, 50, .045);
+  --fa-table-hover:   rgba(139, 94, 52, .12);
+
+  /* Formulare */
+  --fa-input-bg:     #faf3df;
+  --fa-input-border: #c9b899;
+  --fa-focus-ring:   rgba(139, 94, 52, .35);
+
+  /* Primär-Buttons */
+  --fa-btn-bg:       #5b4632;
+  --fa-btn-fg:       #eee1c2;
+  --fa-btn-hover-bg: #7a5c3e;
+
+  /* Geschlechts-Tints — sehr zurückhaltend, wie vergilbte Kolorierung */
+  --fa-sex-m: #8fa3b5;
+  --fa-sex-f: #c49aa0;
+  --fa-sex-u: #a4ad8e;
+  --fa-sex-x: #b8a184;
+  --fa-sex-m-bg: rgba(143, 163, 181, .14);
+  --fa-sex-f-bg: rgba(196, 154, 160, .14);
+  --fa-sex-u-bg: rgba(164, 173, 142, .12);
+  --fa-sex-x-bg: rgba(184, 161, 132, .12);
+
+  /* Diagramme */
+  --fa-chart-line:   #a89a86;  /* Verbindungslinien: verblasste Tusche */
+  --fa-chart-box-bg: #f8f0d9;
+
+  /* Sonstiges — Schatten warm und flach, Papier wirft kaum Schatten */
+  --fa-shadow: 0 2px 10px rgba(58, 47, 36, .18);
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   Palettenspezifisch: Druckvorstufe fürs Ortsfamilienbuch.
+   Beim Drucken fällt die Bildschirm-Chrome weg — es bleibt eine
+   klassische schwarz-weiße Buchseite übrig.
+   ───────────────────────────────────────────────────────────────── */
+@media print {
+  :root {
+    --fa-bg:   #ffffff;
+    --fa-card: #ffffff;
+    --fa-fg:   #000000;
+  }
+
+  body.wt-global {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  .wt-header-wrapper,
+  .wt-primary-navigation,
+  .wt-secondary-navigation {
+    display: none !important;
+  }
+
+  a,
+  a:visited {
+    color: #000000 !important;
+    text-decoration: none !important;
+  }
+}

@@ -1,0 +1,74 @@
+/* ═══════════════════════════════════════════
+   Familienarchiv-Theme · Palette „Hell"
+   Referenzpalette der Familienarchiv-CI (Stufe-1-Theme)
+   Navy #1e3a5f · Blau #2E75B6 · Gold #c8922a / #e0a83a
+   Papier-Beige #f5f3ef · Karten-Weiß #ffffff
+   Wird nach base.css geladen; definiert ausschließlich
+   die Pflicht-Variablen aus PALETTEN-KONTRAKT.md.
+   ═══════════════════════════════════════════ */
+
+:root {
+  /* Typografie */
+  --fa-font-heading: Georgia, "Times New Roman", serif;    /* Überschriften, Seitentitel */
+  --fa-font-body:    system-ui, -apple-system, sans-serif; /* Fließtext */
+
+  /* Grundflächen */
+  --fa-bg:      #f5f3ef;   /* Seitenhintergrund (Papier-Beige) */
+  --fa-fg:      #1a2332;   /* Fließtext */
+  --fa-muted:   #6b6257;   /* Sekundärtext */
+  --fa-card:    #ffffff;   /* Karten, Tabellen, Formulare */
+  --fa-border:  #e2ddd6;   /* Rahmen, Trennlinien */
+
+  /* Markenfarben */
+  --fa-primary:   #1e3a5f; /* Navy: Überschriften, Primärflächen */
+  --fa-accent:    #c8922a; /* Gold: Akzente, Goldlinie */
+  --fa-accent-lt: #e0a83a; /* helles Gold: Verläufe, Hover */
+
+  /* Links */
+  --fa-link:       #2E75B6;
+  --fa-link-hover: #1e3a5f;
+  --fa-link-rgb: 46, 117, 182;
+  --fa-link-hover-rgb: 30, 58, 95;
+
+  /* Header (Navy mit Goldlinie, helle Wortmarke) */
+  --fa-header-bg:       #1e3a5f;
+  --fa-header-fg:       rgba(245, 243, 239, .9);
+  --fa-header-fg-muted: rgba(245, 243, 239, .7);
+  --fa-header-accent:   #c8922a;
+  --fa-logo-url: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22242%22 height=%2250%22 viewBox=%220 0 242 50%22 role=%22img%22 aria-label=%22webtrees%22%3E%0A  %3C%21-- Helle Variante fuer den Navy-Header --%3E%0A  %3Cg%3E%0A    %3Ccircle cx=%2225%22 cy=%2225%22 r=%2222.5%22 fill=%22none%22 stroke=%22%23c8922a%22 stroke-width=%221.6%22/%3E%0A    %3Ccircle cx=%2225%22 cy=%2225%22 r=%2219.5%22 fill=%22none%22 stroke=%22%23c8922a%22 stroke-width=%220.6%22 opacity=%220.6%22/%3E%0A    %3Cg stroke=%22%23f5f3ef%22 stroke-width=%221.6%22 stroke-linecap=%22round%22 fill=%22none%22%3E%0A      %3Cpath d=%22M25 35.5 C25 32 18.5 33.5 18.5 31%22/%3E%0A      %3Cpath d=%22M25 35.5 C25 32 31.5 33.5 31.5 31%22/%3E%0A      %3Cpath d=%22M18.5 26.5 C18.5 23.5 12.5 25 12.5 22%22/%3E%0A      %3Cpath d=%22M18.5 26.5 C18.5 23.5 22.5 25 22.5 22%22/%3E%0A      %3Cpath d=%22M31.5 26.5 C31.5 23.5 27.5 25 27.5 22%22/%3E%0A      %3Cpath d=%22M31.5 26.5 C31.5 23.5 37.5 25 37.5 22%22/%3E%0A    %3C/g%3E%0A    %3Ccircle cx=%2225%22 cy=%2238%22 r=%223%22 fill=%22%23e0a83a%22/%3E%0A    %3Ccircle cx=%2218.5%22 cy=%2228.5%22 r=%222.5%22 fill=%22%23f5f3ef%22/%3E%0A    %3Ccircle cx=%2231.5%22 cy=%2228.5%22 r=%222.5%22 fill=%22%23f5f3ef%22/%3E%0A    %3Ccircle cx=%2212.5%22 cy=%2219.8%22 r=%222.1%22 fill=%22%23f5f3ef%22/%3E%0A    %3Ccircle cx=%2222.5%22 cy=%2219.8%22 r=%222.1%22 fill=%22%23f5f3ef%22/%3E%0A    %3Ccircle cx=%2227.5%22 cy=%2219.8%22 r=%222.1%22 fill=%22%23f5f3ef%22/%3E%0A    %3Ccircle cx=%2237.5%22 cy=%2219.8%22 r=%222.1%22 fill=%22%23f5f3ef%22/%3E%0A  %3C/g%3E%0A  %3Ctext x=%2258%22 y=%2232%22 font-family=%22Georgia, 'Times New Roman', serif%22 font-size=%2227%22 letter-spacing=%220.5%22 fill=%22%23f5f3ef%22%3Eweb%3Ctspan fill=%22%23e0a83a%22%3Etrees%3C/tspan%3E%3C/text%3E%0A  %3Crect x=%2259%22 y=%2239%22 width=%22158%22 height=%221.1%22 fill=%22%23e0a83a%22 opacity=%220.8%22/%3E%0A%3C/svg%3E%0A");
+
+  /* Tabellen */
+  --fa-table-head-bg: #ece7df;
+  --fa-table-stripe:  rgba(30, 58, 95, .035);
+  --fa-table-hover:   rgba(200, 146, 42, .10);
+
+  /* Formulare */
+  --fa-input-bg:     #ffffff;
+  --fa-input-border: #cfc8bd;
+  --fa-focus-ring:   rgba(46, 117, 182, .35);
+
+  /* Primär-Buttons */
+  --fa-btn-bg:       #1e3a5f;
+  --fa-btn-fg:       #f5f3ef;
+  --fa-btn-hover-bg: #2E75B6;
+
+  /* Geschlechts-Tints (wt-chart-box-m/-f/-u/-x, Icons) */
+  --fa-sex-m: #84beff;
+  --fa-sex-f: #ff88aa;
+  --fa-sex-u: #88cc88;
+  --fa-sex-x: #ccaa88;
+  --fa-sex-m-bg: rgba(132, 190, 255, .18);
+  --fa-sex-f-bg: rgba(255, 136, 170, .18);
+  --fa-sex-u-bg: rgba(136, 204, 136, .15);
+  --fa-sex-x-bg: rgba(204, 170, 136, .15);
+
+  /* Diagramme */
+  --fa-chart-line:   #9a938a;  /* Verbindungslinien Pedigree/Descendants */
+  --fa-chart-box-bg: #ffffff;  /* Grundfläche wt-chart-box */
+
+  /* Sonstiges */
+  --fa-shadow: 0 2px 10px rgba(30, 58, 95, .25); /* Header-/Karten-Schatten */
+}
+
+/* Keine palettenspezifischen Extras:
+   „Hell" ist die Referenzpalette — base.css deckt alles ab. */
