@@ -13,6 +13,10 @@ Ein Theme für [webtrees](https://webtrees.net) 2.2 mit vier Farbpaletten in ein
 
 Alle Paletten teilen sich ein Struktur-Stylesheet und unterscheiden sich nur in den Farbvariablen. Die Textkontraste erfüllen in jeder Palette WCAG AA (mindestens 4,5:1).
 
+## Screenshots
+
+![Sepia-Palette](docs/sepia.png)
+
 ## Funktionen
 
 - Paletten-Menü im Kopfbereich. Jeder Benutzer behält seine eigene Wahl. Wählt ein Administrator eine Palette, wird sie Standard für Besucher.
