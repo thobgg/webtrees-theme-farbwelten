@@ -15,7 +15,13 @@ All palettes share one structural stylesheet and differ only in their colour var
 
 ## Screenshots
 
+Sepia:
+
 ![Sepia palette](docs/sepia.png)
+
+Dunkel (dark):
+
+![Dark palette](docs/dunkel.png)
 
 ## Features
 

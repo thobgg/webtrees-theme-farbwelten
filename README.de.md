@@ -15,7 +15,13 @@ Alle Paletten teilen sich ein Struktur-Stylesheet und unterscheiden sich nur in 
 
 ## Screenshots
 
+Sepia:
+
 ![Sepia-Palette](docs/sepia.png)
+
+Dunkel:
+
+![Dunkel-Palette](docs/dunkel.png)
 
 ## Funktionen
 
